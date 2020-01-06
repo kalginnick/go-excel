@@ -118,7 +118,7 @@ func praseTagValue(v string) *fieldConfig {
 func getTagParam(v string) (key, value string) {
 	// expect v = `field_name` or `column(fieldName)` or `default(0)` and so on ...
 	start := strings.Index(v, "(")
-	end := strings.Index(v, ")")
+	end := strings.LastIndex(v, ")")
 	if start > 0 && end == len(v)-1 {
 		return v[:start], v[start+1 : end]
 	}

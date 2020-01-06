@@ -109,28 +109,28 @@ var expectStandardPtrList = []*Standard{
 var expectStandardMapList = []map[string]string{
 	map[string]string{
 		"ID":              "1",
-		"NameOf":          "Andy",
+		"Name(Of)":        "Andy",
 		"AgeOf":           "1",
 		"Slice":           "1|2",
 		"UnmarshalString": "{\"Foo\":\"Andy\"}",
 	},
 	map[string]string{
 		"ID":              "2",
-		"NameOf":          "Leo",
+		"Name(Of)":        "Leo",
 		"AgeOf":           "2",
 		"Slice":           "2|3|4",
 		"UnmarshalString": "{\"Foo\":\"Leo\"}",
 	},
 	map[string]string{
 		"ID":              "3",
-		"NameOf":          "Ben",
+		"Name(Of)":        "Ben",
 		"AgeOf":           "3",
 		"Slice":           "3|4|5|6",
 		"UnmarshalString": "{\"Foo\":\"Ben\"}",
 	},
 	map[string]string{
 		"ID":              "4",
-		"NameOf":          "Ming",
+		"Name(Of)":        "Ming",
 		"AgeOf":           "4",
 		"Slice":           "1",
 		"UnmarshalString": "{\"Foo\":\"Ming\"}",
@@ -173,9 +173,9 @@ type Standard struct {
 	// use field name as default column name
 	ID int
 	// column means to map the column name
-	Name string `xlsx:"column(NameOf)"`
+	Name string `xlsx:"column(Name(Of))"`
 	// you can map a column into more than one field
-	NamePtr *string `xlsx:"column(NameOf)"`
+	NamePtr *string `xlsx:"column(Name(Of))"`
 	// omit `column` if only want to map to column name, it's equal to `column(AgeOf)`
 	Age int `xlsx:"AgeOf"`
 	// split means to split the string into slice by the `|`
